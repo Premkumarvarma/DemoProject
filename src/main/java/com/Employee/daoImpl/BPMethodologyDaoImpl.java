@@ -18,16 +18,26 @@ public class BPMethodologyDaoImpl implements BPMethodologyDao {
 	@Autowired
 	private MongoOperations mongoOperations;
 
-	@Override
-	public BPMethodology saveBPMethodology(BPMethodology BPMethodology) throws AppDaoException {
-		// TODO Auto-generated method stub
-		return null;
+	public BPMethodology saveBPMethodology(BPMethodology bPMethodology) throws AppDaoException {
+		logger.error("start of saveBPMethodology method");
+		try {
+			bPMethodology = mongoOperations.save(bPMethodology);
+		}catch (Exception e) {
+			throw new AppDaoException("","",e);
+		}
+		logger.error("end of saveBPMethodology method");
+		return bPMethodology;
 	}
 
-	@Override
-	public BPMethodology updateBPMethodology(BPMethodology BPMethodology) throws AppDaoException {
-		// TODO Auto-generated method stub
-		return null;
+	public BPMethodology updateBPMethodology(BPMethodology bPMethodology) throws AppDaoException {
+		logger.error("start of updateBPMethodology method");
+		try {
+			bPMethodology = mongoOperations.save(bPMethodology);
+		}catch (Exception e) {
+			throw new AppDaoException("","",e);
+		}
+		logger.error("end of updateBPMethodology method");
+		return bPMethodology;
 	}
 
 	@Override
