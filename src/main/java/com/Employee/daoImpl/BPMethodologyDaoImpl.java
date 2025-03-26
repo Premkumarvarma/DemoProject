@@ -1,5 +1,8 @@
 package com.Employee.daoImpl;
 
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.stereotype.Service;
 
 import com.Employee.dao.BPMethodologyDao;
@@ -10,6 +13,10 @@ import Exception.AppDaoException;
 @Service
 public class BPMethodologyDaoImpl implements BPMethodologyDao {
 	
+	private static Logger logger = Logger.getLogger(BPMethodologyDaoImpl.class);
+
+	@Autowired
+	private MongoOperations mongoOperations;
 
 	@Override
 	public BPMethodology saveBPMethodology(BPMethodology BPMethodology) throws AppDaoException {
